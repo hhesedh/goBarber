@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  db:
+    image: "postgres"
+    container_name: db
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: docker
+      POSTGRES_DB: gostack_gobarber
+  app:
+    container_name: app
+    restart: always
+    build: .
+    ports:
+      - "3333:3333"
+    depends_on:
+      - db
+    command: bash -c "npm run typeorm:production migration:run && node dist/server.js"
