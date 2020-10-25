@@ -5,6 +5,8 @@
 /.pnp
 .pnp.js
 /dist
+tmp/*
+!tmp/.gitkeep
 
 # testing
 /coverage
