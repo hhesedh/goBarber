@@ -9,7 +9,7 @@ import { Form } from "@unform/web";
 import { FormHandles } from "@unform/core";
 import getValidationErrors from "../../utils/getValidationErrors";
 import * as Yup from "yup";
-import { useAuth } from "../../context/AuthContext";
+import { useAuth } from "../../hooks/AuthContext";
 
 interface SignInFormData {
   email: string;
